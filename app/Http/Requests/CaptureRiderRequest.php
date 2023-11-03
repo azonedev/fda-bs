@@ -11,7 +11,7 @@ class CaptureRiderRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class CaptureRiderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'rider_id' => 'required|integer|exists:riders,id',
+            'service_name' => 'required|string',
+            'lat' => 'required|numeric|between:-90,90',
+            'long' => 'required|numeric|between:-180,180',
         ];
     }
 }

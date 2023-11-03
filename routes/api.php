@@ -24,6 +24,6 @@ Route::group(['prefix' => 'v1'], function (){
     });
 
     Route::post('/rider-capture', [\App\Http\Controllers\Api\v1\RiderController::class, 'captureRider']);
-    Route::get('/find-rider/{restudent-id}', [\App\Http\Controllers\Api\v1\RiderController::class, 'findRider']);
+    Route::get('/find-rider/{restaurantId}', [\App\Http\Controllers\Api\v1\RiderController::class, 'getNearestRider']);
 
 });
